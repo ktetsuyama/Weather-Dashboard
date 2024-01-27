@@ -1,8 +1,7 @@
 var main = $("main");
 
 function getApi() {
-	var requestUrl =
-		"api.openweathermap.org/data/2.5/forecast?q=london,uk&appid=4f72f14a95ae7faafb871b54db6b9ebf";
+	var requestUrl = "api.openweathermap.org/data/2.5/forecast";
 
 	$(function () {
 		fetch(requestUrl)
