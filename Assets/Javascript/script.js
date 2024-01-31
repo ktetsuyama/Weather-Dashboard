@@ -1,19 +1,21 @@
 function getApi() {
+	var searchRow = $("<div>").attr("id", "searchRow").attr("class", "row");
+	$("#weather").append(searchRow);
 	var searchBarPrompt = $("<h2>").text("Search for a city");
-	$("#weather").append(searchBarPrompt);
+	$(searchRow).append(searchBarPrompt);
 	var searchBar = $("<input>")
 		.attr("type", "text")
 		.attr("id", "searchBoxInput")
 		.attr("placeholder", "Search...")
-		.attr("class", "col-1 col-md-3 text-center py-3");
+		.attr("class", "col-2 text-center py-3");
 
-	$("#weather").append(searchBar);
+	$(searchRow).append(searchBar);
 
 	var searchBarButton = $("<button>")
-		.attr("class", "btn col-2 col-md-1")
+		.attr("class", "btn btn-primary col-1")
 		.attr("id", "searchButton")
 		.text("Search");
-	$("#weather").append(searchBarButton);
+	$(searchRow).append(searchBarButton);
 
 	$("#searchButton").click(function () {
 		var textInput = $("#searchBoxInput").val();
@@ -23,13 +25,21 @@ function getApi() {
 		}
 		localStorage.setItem("searchText", textInput);
 
-		var previousSearchDiv = $("<div>").attr("id", "previousSearches");
-		$("#weather").append(previousSearchDiv);
+		var previousSearchDiv = $("<div>")
+			.attr("class", "list-group col-2")
+			.attr("id", "previousSearches");
+		$("#searchRow").append(previousSearchDiv);
+
 		var previousSearch = $("<button>")
-			.attr("class", "btn col-2 col-md-1")
+			.attr("class", "btn col-1")
 			.attr("id", "prevsearch")
 			.text(textInput);
 		$("#previousSearches").append(previousSearch);
+
+		var mainDisplayDiv = $("<div>").attr("class", "row justify-content-end");
+		$("#weather").append(mainDisplayDiv);
+
+		$("#mD").empty();
 
 		var city = localStorage.getItem("searchText");
 		var APIKey = "2ecc56f6f728983cbd84a7025a8bc07e";
@@ -55,16 +65,17 @@ function getApi() {
 				var kWindSpeed = data.list[0].wind.speed;
 				var kLocation = data.city.name;
 				var mainDisplay = $("<div>")
-					.attr("class", "col-2 col-md-1 hour text-start py-3")
+					.attr("id", "mD")
+					.attr("class", "col-8 text-start py-3")
 					.text(kLocation + " " + today.format("dddd, MMM D, YYYY"));
-				$("#weather").append(mainDisplay);
+				$(mainDisplayDiv).append(mainDisplay);
 
 				var temperature = $("<p>").text("Temp: " + kTemp + "°F");
-				$("#weather").append(temperature);
+				$(mainDisplay).append(temperature);
 				var windSpeed = $("<p>").text("Wind speed: " + kWindSpeed + "MPH");
-				$("#weather").append(windSpeed);
+				$(mainDisplay).append(windSpeed);
 				var weather = $("<p>").text("Humidity: " + kHumidity + "%");
-				$("#weather").append(weather);
+				$(mainDisplay).append(weather);
 			})
 			.catch(function (err) {
 				console.log(err);
