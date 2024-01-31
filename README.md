@@ -34,6 +34,8 @@ Tutorials used:
 
 [jQuery Docuementation](https://api.jquery.com/)
 
+[How to Call an API in JavaScript – with Examples](https://www.freecodecamp.org/news/make-api-calls-in-javascript/)
+
 ## License
 
 MIT License
