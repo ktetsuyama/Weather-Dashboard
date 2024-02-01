@@ -22,7 +22,7 @@ The client travels frequently and would like to see the weather for multiple cit
 
 I created a weather application that allows the user to query city names and see the forecast for that city. The queried names are saved to allow the user to revisit previous cities and view the weather.
 
-![Screenshot of the planner](./assets/Screenshots/screenshot.png)
+![Screenshot of the application](./assets/Screenshots/screenshot.png)
 
 [Link to the deployed application](https://ktetsuyama.github.io/Work-Day-Scheduler/)
 
