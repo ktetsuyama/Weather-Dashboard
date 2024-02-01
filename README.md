@@ -24,7 +24,7 @@ I created a weather application that allows the user to query city names and see
 
 ![Screenshot of the application](./assets/Screenshots/screenshot.png)
 
-[Link to the deployed application](https://ktetsuyama.github.io/Work-Day-Scheduler/)
+[Link to the deployed application](https://ktetsuyama.github.io/Weather-Dashboard/)
 
 ## Credits
 
