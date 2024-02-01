@@ -1,4 +1,5 @@
 function getApi() {
+	// listen for a search click and set to local storage
 	$("#searchButton").click(function () {
 		var timestamp = Date.now();
 		var textInput = $("#searchBoxInput").val();
@@ -11,11 +12,13 @@ function getApi() {
 		$("#today").empty();
 		$("#fiveDay").empty();
 
+		// create buttons below the serch button of previous searches as thier own buttons
 		var previousSearch = $("<button>")
 			.attr("class", "pastSearchBtn col-12 btn btn-info my-1")
 			.text(textInput);
 		$("#pastSearches").append(previousSearch);
 
+		// create the main display div
 		var mainDisplayDiv = $("<div>").attr("class", "row justify-content-end");
 		$("#today").append(mainDisplayDiv);
 
@@ -28,6 +31,7 @@ function getApi() {
 			APIKey +
 			"&units=imperial";
 
+		// fetch the data and return the promise
 		fetch(requestUrl)
 			.then(function (response) {
 				if (!response.ok) {
@@ -47,6 +51,8 @@ function getApi() {
 				var kLocation = data.city.name;
 				var iconElement = $("<img>").attr("src", iconUrl);
 				var divider = $("<hr>");
+
+				// create the main display area
 				var mainDisplay = $("<div>")
 					.attr("id", "mD")
 					.attr("class", "border border-primary col-12 text-start py-3");
@@ -69,6 +75,7 @@ function getApi() {
 				var weather = $("<p>").text("Humidity: " + kHumidity + "%");
 				$(mainDisplay).append(weather);
 
+				// create the five day forecast
 				var fiveDayTitle = $("<h4>")
 					.attr("class", "pt-3")
 					.text("5 Day Forecast");
@@ -122,4 +129,5 @@ function getApi() {
 	});
 }
 
+// run the function
 getApi();

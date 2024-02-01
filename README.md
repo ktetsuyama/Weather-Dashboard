@@ -28,7 +28,7 @@ I created a weather application that allows the user to query city names and see
 
 ## Credits
 
-I also used phind.com to help debug my code.
+I worked with Nick Gambino and John Young when I had code blocks. I also used phind.com to help debug my code.
 
 Tutorials used:
 
