@@ -134,6 +134,8 @@ function getApi() {
 				console.log(err);
 			});
 	}
+
+	// register both a click and an Enter keypress to execute the search
 	$("#searchButton").click(search);
 	$(document).keypress(function (event) {
 		var key = event.which;
@@ -147,8 +149,11 @@ function fetchWeather(cityName) {
 	$("#searchBoxInput").val("");
 	$("#today").empty();
 	$("#fiveDay").empty();
+
+	// create the main display div
 	var mainDisplayDiv = $("<div>").attr("class", "row justify-content-end");
 	$("#today").append(mainDisplayDiv);
+
 	var APIKey = "2ecc56f6f728983cbd84a7025a8bc07e";
 	var requestUrl =
 		"https://api.openweathermap.org/data/2.5/forecast?q=" +
