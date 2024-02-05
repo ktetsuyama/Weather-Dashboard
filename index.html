@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="entire">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,23 +20,25 @@
 			crossorigin="anonymous"
 		></script>
 	</head>
-	<body>
+	<body class="bg-transparent">
 		<main>
 			<header
 				class="p-5 mb-4 bg-secondary text-white border-5 border-bottom border-dark text-center"
 			>
 				<h1 class="display-3">Weather Dashboard</h1>
 			</header>
-			<div id="weather" class="row p-3">
+			<div id="weather" class="row p-3 bg-transparent">
 				<div id="searchArea" class="col-3 mr-1">
-					<div id="searchBar" class="h4 my-1">Search for a city:</div>
+					<div id="searchBar" class="h4 text-white my-1">
+						Search for a city:
+					</div>
 					<input
 						class="col-12 my-1"
 						type="text"
 						id="searchBoxInput"
 						placeholder="e.g., Tokyo, Chicago, Seoul, etc."
 					/>
-					<button id="searchButton" class="btn btn-primary col-12 my-1">
+					<button id="searchButton" class="btn btn-keegan col-12 my-1">
 						Search
 					</button>
 					<container id="pastSearches" class="col-12"></container>

@@ -16,7 +16,7 @@ function getApi() {
 
 		// create a button for each previously searched city
 		var previousSearch = $("<button>")
-			.attr("class", "pastSearchBtn col-12 btn btn-info my-1")
+			.attr("class", "pastSearchBtn col-12 btn btn-keeganPast my-1")
 			.text(textInput);
 		$("#pastSearches").append(previousSearch);
 
@@ -62,24 +62,35 @@ function getApi() {
 				// create the main display area
 				var mainDisplay = $("<div>")
 					.attr("id", "mD")
-					.attr("class", "border border-primary col-12 text-start py-3");
+					.attr(
+						"class",
+						"border border-primary rounded col-12 text-start py-3"
+					);
 				$(mainDisplayDiv).append(mainDisplay);
 
-				var mainDisplayHead = $("<h4>").text(
-					"Today in " + kLocation + " " + today.format("dddd, MMM D, YYYY ")
-				);
+				var mainDisplayHead = $("<h4>")
+					.attr("class", "text-white")
+					.text(
+						"Today in " + kLocation + " " + today.format("dddd, MMM D, YYYY ")
+					);
 				$(mainDisplay).append(mainDisplayHead);
 
 				var icon5D = $("<div>").html(iconElement[0].outerHTML);
 				$(mainDisplay).append(icon5D);
 
-				var temperature = $("<p>").text("Temp: " + kTemp + "°F");
+				var temperature = $("<p>")
+					.attr("class", "text-white")
+					.text("Temp: " + kTemp + "°F");
 				$(mainDisplay).append(temperature);
 
-				var windSpeed = $("<p>").text("Wind speed: " + kWindSpeed + "MPH");
+				var windSpeed = $("<p>")
+					.attr("class", "text-white")
+					.text("Wind speed: " + kWindSpeed + "MPH");
 				$(mainDisplay).append(windSpeed);
 
-				var weather = $("<p>").text("Humidity: " + kHumidity + "%");
+				var weather = $("<p>")
+					.attr("class", "text-white")
+					.text("Humidity: " + kHumidity + "%");
 				$(mainDisplay).append(weather);
 
 				// create the five day forecast
@@ -187,21 +198,29 @@ function fetchWeather(cityName) {
 				.attr("class", "border border-primary col-12 text-start py-3");
 			$(mainDisplayDiv).append(mainDisplay);
 
-			var mainDisplayHead = $("<h4>").text(
-				"Today in " + kLocation + " " + today.format("dddd, MMM D, YYYY ")
-			);
+			var mainDisplayHead = $("<h4>")
+				.attr("class", "text-white")
+				.text(
+					"Today in " + kLocation + " " + today.format("dddd, MMM D, YYYY ")
+				);
 			$(mainDisplay).append(mainDisplayHead);
 
 			var icon5D = $("<div>").html(iconElement[0].outerHTML);
 			$(mainDisplay).append(icon5D);
 
-			var temperature = $("<p>").text("Temp: " + kTemp + "°F");
+			var temperature = $("<p>")
+				.attr("class", "text-white")
+				.text("Temp: " + kTemp + "°F");
 			$(mainDisplay).append(temperature);
 
-			var windSpeed = $("<p>").text("Wind speed: " + kWindSpeed + "MPH");
+			var windSpeed = $("<p>")
+				.attr("class", "text-white")
+				.text("Wind speed: " + kWindSpeed + "MPH");
 			$(mainDisplay).append(windSpeed);
 
-			var weather = $("<p>").text("Humidity: " + kHumidity + "%");
+			var weather = $("<p>")
+				.attr("class", "text-white")
+				.text("Humidity: " + kHumidity + "%");
 			$(mainDisplay).append(weather);
 
 			// create the five day forecast
